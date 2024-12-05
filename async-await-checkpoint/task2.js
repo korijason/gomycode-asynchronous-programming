@@ -23,8 +23,6 @@ function fakeApiCall() {
       // Simulate a success scenario, returning the fetched data
       resolve("Fetched data from API");
       
-      // Uncomment the next line to simulate an error scenario
-      // reject(new Error("Failed to fetch data"));
     }, 2000); // Simulate 2 seconds delay
   });
 }
