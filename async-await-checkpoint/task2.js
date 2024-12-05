@@ -4,11 +4,30 @@
  * Uses await to handle the asynchronous nature of the API call.
  */
 async function awaitCall() {
-    try {
-      const data = await fakeApiCall(); // Simulating API call
-      console.log("Fetched Data:", data);
-    } catch (error) {
-      console.error("Error fetching data:", error.message);
-    }
+  try {
+    // Simulate an API call
+    const data = await fakeApiCall(); 
+    console.log("Fetched Data:", data);
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
   }
-  
+}
+
+/**
+ * Simulates an API call with a delay using a Promise.
+ * @returns {Promise<string>} A promise that resolves with a fake API response.
+ */
+function fakeApiCall() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Simulate a success scenario, returning the fetched data
+      resolve("Fetched data from API");
+      
+      // Uncomment the next line to simulate an error scenario
+      // reject(new Error("Failed to fetch data"));
+    }, 2000); // Simulate 2 seconds delay
+  });
+}
+
+// Call the awaitCall function to see it in action
+awaitCall();
